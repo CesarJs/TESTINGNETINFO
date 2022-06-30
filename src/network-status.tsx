@@ -4,10 +4,8 @@ import {
   StyleSheet,
   Text,
   TouchableOpacity,
-  useColorScheme,
   View,
 } from 'react-native';
-import {Colors} from 'react-native/Libraries/NewAppScreen';
 import NetInfo, {NetInfoState} from '@react-native-community/netinfo';
 import {ptBR} from 'date-fns/locale';
 import {format} from 'date-fns';
@@ -20,10 +18,9 @@ export default function NetworkStatus() {
   const [netWork, setNetwork] = useState<NetInfoState>({} as NetInfoState);
   const [netWorkOk, setNetWorkOk] = useState<boolean | null>(false);
   const [log, setLog] = useState('');
-  const isDarkMode = useColorScheme() === 'dark';
   const refScroll = useRef<ScrollView>(null);
   const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
+    backgroundColor: 'white',
     paddingBottom: 80,
     flex: 1,
   };
@@ -101,6 +98,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     width: '100%',
     paddingBottom: 100,
+    backgroundColor: 'white',
   },
   title: {
     fontSize: 24,
