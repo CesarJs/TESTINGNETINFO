@@ -29,3 +29,9 @@ yarn
 cd ios && pod install
 cd .. && yarn start
 
+
+#6.0.0
+git checkout testing600
+yarn
+cd ios && pod install
+cd .. && yarn start
